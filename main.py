@@ -1,3 +1,6 @@
+from monitor import Monitor
+
+
 def main():
     print("Hello, this is the CPU Simulator.")
     mode = input("Select mode (1: Read, 2: Write): ")
@@ -13,6 +16,17 @@ def main():
     print(f"You selected associativity {associativity}.")
     if mode == '2':
         print(f"You selected write policy {write_policy}.")
+    print("Running simulation...")
+    monitor = Monitor()
+    # Simulate some cache and memory operations
+    print("Simulation complete.")
+    if mode == '1':
+        print(monitor.cache_misses, "total cache misses.")
+        print(monitor.cache_hits, "total cache hits.")
+    if mode == '2':
+        print(monitor.cache_accesses, "total cache accesses.")
+        print(monitor.memory_accesses, "total memory accesses.")
+        print(monitor.get_total_time(), "nanoseconds total access time.")
 
 
 def print_rectangles_ascii_art():
