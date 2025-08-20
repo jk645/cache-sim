@@ -1,3 +1,4 @@
+from cache import Cache
 from monitor import Monitor
 
 
@@ -18,7 +19,7 @@ def main():
         print(f"You selected write policy {write_policy}.")
     print("Running simulation...")
     monitor = Monitor()
-    # Simulate some cache and memory operations
+    cache = Cache()
     print("Simulation complete.")
     if mode == '1':
         print(monitor.cache_misses, "total cache misses.")
